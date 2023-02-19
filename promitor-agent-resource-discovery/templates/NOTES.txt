@@ -1,1 +1,1 @@
-Promitor Resource Discovery is up and running!
+az Promitor Resource Discovery is up and running!

@@ -2,6 +2,8 @@
 
 [![Artifact HUB](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/promitor)](https://artifacthub.io/packages/search?repo=promitor)
 
+This repo is copy of version 2.9.0 Heml chart and customized for testing purposes.
+
 Official Helm chart repository for Promitor.
 
 ## Documentation

@@ -1,14 +1,14 @@
 apiVersion: v2
-version: 2.9.0
+version: 2.9.99
 appVersion: 2.8.0
 type: application
-name: promitor-agent-scraper
+name: az-promitor-agent-scraper
 description: Promitor, bringing Azure Monitor metrics where you need them.
 home: https://promitor.io
 sources:
-  - https://github.com/tomkerkhove/promitor
+  - https://github.com/farzanv/promitor
   - https://github.com/promitor/charts
 maintainers:
-  - name: Tom Kerkhove
+  - name: Farzan Vahdat
     url: https://github.com/tomkerkhove
 icon: https://raw.githubusercontent.com/tomkerkhove/promitor/master/docs/media/logos/promitor.png

@@ -3,11 +3,11 @@ apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
   labels:
-{{- include "promitor-agent-scraper.labels" . | nindent 4 }}
+{{- include "az-promitor-agent-scraper.labels" . | nindent 4 }}
 {{- if .Values.metricSinks.prometheusScrapingEndpoint.serviceMonitor.labels }}
 {{ toYaml .Values.metricSinks.prometheusScrapingEndpoint.serviceMonitor.labels | indent 4 }}
 {{- end }}
-  name: {{ template "promitor-agent-scraper.fullname" . }}
+  name: {{ template "az-promitor-agent-scraper.fullname" . }}
 {{- if .Values.metricSinks.prometheusScrapingEndpoint.serviceMonitor.namespace }}
   namespace: {{ .Values.metricSinks.prometheusScrapingEndpoint.serviceMonitor.namespace }}
 {{- end }}
@@ -31,11 +31,11 @@ spec:
     relabelings:
     {{- toYaml .Values.metricSinks.prometheusScrapingEndpoint.serviceMonitor.relabelings | nindent 4 }}
 {{- end }}
-  jobLabel: {{ template "promitor-agent-scraper.fullname" . }}
+  jobLabel: {{ template "az-promitor-agent-scraper.fullname" . }}
   namespaceSelector:
     matchNames:
     - {{ .Release.Namespace }}
   selector:
     matchLabels:
-      {{- include "promitor-agent-scraper.selectorLabels" . | nindent 6 }}
+      {{- include "az-promitor-agent-scraper.selectorLabels" . | nindent 6 }}
 {{- end }}

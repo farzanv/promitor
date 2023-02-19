@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ template "promitor-agent-resource-discovery.name" . }}
+  name: {{ template "az-promitor-agent-resource-discovery.name" . }}
   namespace: {{ .Release.Namespace }}
   labels:
-    {{- include "promitor-agent-resource-discovery.labels" . | nindent 4 }}
+    {{- include "az-promitor-agent-resource-discovery.labels" . | nindent 4 }}
 {{- if or (.Values.service.loadBalancer.enabled) (.Values.prometheus.enableServiceDiscovery) }}
   annotations:
 {{- if or (.Values.service.loadBalancer.azure.dnsPrefix) (.Values.service.loadBalancer.azure.exposeInternally) }}
@@ -33,4 +33,4 @@ spec:
       targetPort: {{ .Values.service.targetPort }}
       protocol: TCP
   selector:
-    {{- include "promitor-agent-resource-discovery.selectorLabels" . | nindent 4 }}
+    {{- include "az-promitor-agent-resource-discovery.selectorLabels" . | nindent 4 }}
