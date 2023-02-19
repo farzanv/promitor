@@ -1,9 +1,9 @@
 apiVersion: v2
-version: 2.9.99
-appVersion: 2.8.0
+version: 2.9.100
+appVersion: 0.8.0
 type: application
-name: az-promitor-agent-scraper
-description: Promitor, bringing Azure Monitor metrics where you need them.
+name: az-promitor-agent-resource-discovery
+description: Automatically discover Azure resources to be scraped by Promitor Scraper agent.
 home: https://promitor.io
 sources:
   - https://github.com/farzanv/promitor
