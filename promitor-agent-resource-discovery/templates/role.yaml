@@ -6,17 +6,17 @@ apiVersion: rbac.authorization.k8s.io/v1beta1
 {{- end }}
 kind: Role
 metadata:
-  name: {{ template "promitor-agent-resource-discovery.name" . }}
+  name: {{ template "az-promitor-agent-resource-discovery.name" . }}
   namespace: {{ .Release.Namespace }}
   labels:
-    {{- include "promitor-agent-resource-discovery.labels" . | nindent 4 }}
+    {{- include "az-promitor-agent-resource-discovery.labels" . | nindent 4 }}
 rules:
   - apiGroups:
     - policy
     resources:
     - podsecuritypolicies
     resourceNames:
-    - {{ template "promitor-agent-resource-discovery.name" . }}
+    - {{ template "az-promitor-agent-resource-discovery.name" . }}
     verbs:
     - use
 {{- end -}}

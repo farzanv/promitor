@@ -3,11 +3,11 @@ apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
   labels:
-{{- include "promitor-agent-resource-discovery.labels" . | nindent 4 }}
+{{- include "az-promitor-agent-resource-discovery.labels" . | nindent 4 }}
 {{- if .Values.prometheus.serviceMonitor.labels }}
 {{ toYaml .Values.prometheus.serviceMonitor.labels | indent 4 }}
 {{- end }}
-  name: {{ template "promitor-agent-resource-discovery.fullname" . }}
+  name: {{ template "az-promitor-agent-resource-discovery.fullname" . }}
 {{- if .Values.prometheus.serviceMonitor.namespace }}
   namespace: {{ .Values.prometheus.serviceMonitor.namespace }}
 {{- end }}
@@ -20,11 +20,11 @@ spec:
 {{- if .Values.prometheus.serviceMonitor.timeout }}
     scrapeTimeout: {{ .Values.prometheus.serviceMonitor.timeout }}
 {{- end }}
-  jobLabel: {{ template "promitor-agent-resource-discovery.fullname" . }}
+  jobLabel: {{ template "az-promitor-agent-resource-discovery.fullname" . }}
   namespaceSelector:
     matchNames:
     - {{ .Release.Namespace }}
   selector:
     matchLabels:
-      {{- include "promitor-agent-resource-discovery.selectorLabels" . | nindent 6 }}
+      {{- include "az-promitor-agent-resource-discovery.selectorLabels" . | nindent 6 }}
 {{- end }}

@@ -197,7 +197,7 @@ rbac:
 
     ## The name of the service account to use if create is false
     ## If create is true, a name is generated using the fullname template
-    name: promitor-scraper
+    name: az-promitor-scraper
     annotations: {}
 
     ## Set this to true if you plan on using Pod Security Policy
